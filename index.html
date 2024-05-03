@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Simon</title>
+  </head>
+  <body>
+    <div class="dark-layout"></div>
+    <div class="simon">
+      <div class="black-circle">
+        <div class="top">Simon</div>
+        <div class="bottom">
+          <button class="play-btn">Play</button>
+        </div>
+      </div>
+      <div class="buttons-container">
+        <div class="button green" style="--color: green; --i: 0">
+          <div class="led" style="--color: rgb(73, 253, 73)"></div>
+          <audio id="green-sound" preload="auto">
+            <source src="assets/green.mp3" type="audio/mp3" />
+          </audio>
+        </div>
+        <div class="button red" style="--color: red; --i: 1">
+          <audio id="red-sound" preload="auto">
+            <source src="assets/red.mp3" type="audio/mp3" />
+          </audio>
+          <div class="led" style="--color: rgb(255, 183, 183)"></div>
+        </div>
+        <div class="button yellow" style="--color: yellow; --i: 3">
+          <audio id="yellow-sound" preload="auto">
+            <source src="assets/yellow.mp3" type="audio/mp3" />
+          </audio>
+          <div class="led" style="--color: white"></div>
+        </div>
+        <div class="button blue" style="--color: blue; --i: 2">
+          <audio id="blue-sound" preload="auto">
+            <source src="assets/blue.mp3" type="audio/mp3" />
+          </audio>
+          <div class="led" style="--color: rgb(149, 149, 255)"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
