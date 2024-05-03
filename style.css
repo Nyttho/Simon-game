@@ -90,6 +90,7 @@ body {
   gap: 10px;
   border-radius: 50%;
   padding: 10px;
+  user-select: none;
 }
 .button {
   position: relative;
@@ -101,6 +102,9 @@ body {
   overflow: hidden;
   cursor: pointer;
   border: 10px solid rgba(0, 0, 0, 0.5);
+  user-select: none;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .led {
@@ -114,6 +118,7 @@ body {
   border-radius: 50%;
   box-shadow: none;
   pointer-events: none;
+  user-select: none;
 }
 
 .led.active {
@@ -142,5 +147,19 @@ body {
   .black-circle {
     width: 100px;
     height: 100px;
+  }
+
+  .play-btn {
+    padding: 0.5rem 1rem;
+  }
+
+  .led {
+    width: 30px;
+    height: 30px;
+  }
+
+  .led.active {
+    background: var(--color);
+    box-shadow: 0 0 30px 30px var(--color);
   }
 }
