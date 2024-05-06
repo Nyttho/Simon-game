@@ -61,7 +61,6 @@ function playColorSequentially(colors) {
     stopTimer();
     isGameActive = false;
     let index = 0;
-    console.log(gameColors)
 
     function playNextColor() {
         if (index < colors.length) {
