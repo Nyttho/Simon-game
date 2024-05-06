@@ -178,6 +178,7 @@ function resetGame() {
     checkIndex = 0;
     isGood = true;
     isGameActive = false;
+    speed = 1000;
     play.addEventListener("click", game);
     stopTimer();
 }
