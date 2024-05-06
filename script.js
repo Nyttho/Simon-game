@@ -41,7 +41,7 @@ function playColor(color) {
             const led = button.querySelector(".led");
             led.classList.add("active");
             playSound(buttonColor);
-
+            stopSound(buttonColor, speed)
             setTimeout(() => {
                 led.classList.remove("active")
             }, 500);
@@ -78,6 +78,15 @@ function playColorSequentially(colors) {
 function playSound(color) {
     const colorSound = document.querySelector(`#${color}-sound`);
     colorSound.play();
+}
+
+function stopSound(color, speed) {
+    const colorSound = document.querySelector(`#${color}-sound`);
+    setTimeout(() => {
+        colorSound.pause();
+        colorSound.currentTime = 0;
+
+    }, speed - 1)
 }
 
 function handleClick(e) {
