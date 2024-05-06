@@ -4,9 +4,10 @@ const buttons = document.querySelectorAll(".button");
 let gameColors = [];
 let checkIndex = 0;
 let isGood = true;
-const winCondition = 10;
+const winCondition = 15;
 let isGameActive = false;
 let timerId;
+let speed = 1000;
 
 function startTimer() {
     timerId = setTimeout(() => {
@@ -48,16 +49,25 @@ function playColor(color) {
     });
 };
 
+function increaseSpeedSequence(speed) {
+    if (speed <= 200) {
+        return speed = 200;
+    } else {
+        return speed -= 50;
+    }
+}
+
 function playColorSequentially(colors) {
     stopTimer();
     isGameActive = false;
     let index = 0;
+    console.log(gameColors)
 
     function playNextColor() {
         if (index < colors.length) {
             playColor(colors[index]);
             index++;
-            setTimeout(playNextColor, 1000);
+            setTimeout(playNextColor, speed);
         } else {
             isGameActive = true;
             startTimer();
@@ -99,6 +109,7 @@ function handleClick(e) {
     }
 
     if (checkIndex === gameColors.length) {
+        speed = increaseSpeedSequence(speed);
         //evite que la nouvelle couleur soit jouée directement
         setTimeout(() => getNewColor(), 1000);
         checkIndex = 0;
