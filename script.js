@@ -73,8 +73,6 @@ function playColorSequentially(colors) {
         }
     }
     playNextColor();
-
-
 }
 
 function playSound(color) {
